@@ -1,0 +1,15 @@
+development:
+  uri: mongodb://mongo:mongo@dbh61.mongolab.com:27617/uppic
+
+test:
+  uri: mongodb://mongo:mongo@dbh61.mongolab.com:27617/uppic
+
+# set these environment variables on your prod server
+production:
+  uri: mongodb://mongo:mongo@dbh61.mongolab.com:27617/uppic
+
+  # slaves:
+  #   - host: slave1.local
+  #     port: 27018
+  #   - host: slave2.local
+  #     port: 27019

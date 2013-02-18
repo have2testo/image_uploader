@@ -1,8 +1,8 @@
 Uploader::Application.routes.draw do
-  resources :users
-  post "users/photo" => 'users#photo'
+  resources :galleries
+  post "galleries/photo" => 'galleries#photo'
   root :to => 'users#index'
-  match "/images/uploads/*path" => "users#serve"
+  match "/images/uploads/*path" => "galleries#serve"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

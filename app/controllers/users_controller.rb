@@ -1,4 +1,3 @@
-require 'mongo'
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
@@ -79,34 +78,6 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to users_url }
       format.json { head :no_content }
-    end
-  end
-
-  def serve
-    gridfs_path = env["PATH_INFO"].gsub("/images/", "")
-
-    begin
-      gridfs_file = Mongo::GridFileSystem.new(Mongoid.database).open(gridfs_path, 'r')
-      self.response_body = gridfs_file.read
-      self.content_type = gridfs_file.content_type
-    rescue
-      self.status = :file_not_found
-      self.content_type = 'text/plain'
-      self.response_body = ''
-    end
-  end
-
-  def photo
-    @user = User.new(:name => params[:name], :photo => params[:photo] )
-
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render json: @user, status: :created, location: @user }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
     end
   end
 end

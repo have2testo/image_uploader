@@ -1,4 +1,6 @@
 Uploader::Application.routes.draw do
+  resources :users
+
   resources :galleries
   post "galleries/photo" => 'galleries#photo'
   root :to => 'users#index'

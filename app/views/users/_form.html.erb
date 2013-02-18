@@ -12,14 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :photo %><br />
-    <%= image_tag( @user.photo_url ) if @user.photo? %>
-    <%= f.file_field :photo %>
-    <%= f.hidden_field :photo_cache %>
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
   </div>
   <div class="actions">
     <%= f.submit %>

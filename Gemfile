@@ -10,6 +10,7 @@ gem 'bson_ext', '~>1.3'
 gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'rmagick'
+gem 'therubyracer'
 
 # Gems used only for assets and not required
 # in production environments by default.

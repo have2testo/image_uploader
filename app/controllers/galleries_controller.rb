@@ -101,7 +101,7 @@ class GalleriesController < ApplicationController
   end
 
   def photo
-    @gallery = Gallery.new(:name => params[:name], :photo => params[:photo] )
+    @gallery = Gallery.new(:title => params[:title], :photo => params[:photo], :user_id => params[:user_id] )
 
     respond_to do |format|
       if @gallery.save

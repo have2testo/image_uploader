@@ -10,6 +10,19 @@ class UsersController < ApplicationController
     end
   end
 
+  # GET /user/1/galleries
+  # GET /user/1/galleries.json
+  def galleries
+    @user = User.where("id" => :id);
+    @galleries = Gallery.where("user_id" => :id);
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @galleries }
+    end
+  end
+
+
   # GET /users/1
   # GET /users/1.json
   def show

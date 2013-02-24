@@ -3,7 +3,11 @@ class GalleriesController < ApplicationController
   # GET /galleries
   # GET /galleries.json
   def index
-    @galleries = Gallery.all
+    if params[:user_id]
+      @galleries = Gallery.where("user_id" => params[:user_id] );
+    else
+      @galleries = Gallery.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

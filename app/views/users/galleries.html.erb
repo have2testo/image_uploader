@@ -2,7 +2,6 @@
 
 <table>
   <tr>
-    <th>userId</th>
     <th>Title</th>
     <th>Photo</th>
     <th></th>
@@ -12,7 +11,6 @@
 
 <% @galleries.each do |gallery| %>
   <tr>
-    <td><%= gallery.user_id %></td>
     <td><%= gallery.title %></td>
     <td><%= image_tag(gallery.photo_url(:thumb).to_s) if gallery.photo? %></td>
     <td><%= link_to 'Show', gallery %></td>
@@ -24,5 +22,4 @@
 
 <br />
 
-<%= link_to 'New Gallery', new_gallery_path %>
-<%= link_to 'Go To Index', users_path %>
+<%= link_to 'New Gallery', new_user_gallery_path %>

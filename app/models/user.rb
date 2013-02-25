@@ -1,5 +1,7 @@
 class User
   include Mongoid::Document
-  field :title, :type => String
-  mount_uploader :photo, PhotoUploader
+  field :name, :type => String
+  field :password, :type => String
+  field :email, :type => String
+  has_many :galleries
 end

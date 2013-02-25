@@ -1,0 +1,28 @@
+<h1>Listing galleries</h1>
+
+<table>
+  <tr>
+    <th>userId</th>
+    <th>Title</th>
+    <th>Photo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @galleries.each do |gallery| %>
+  <tr>
+    <td><%= gallery.user_id %></td>
+    <td><%= gallery.title %></td>
+    <td><%= image_tag(gallery.photo_url(:thumb).to_s) if gallery.photo? %></td>
+    <td><%= link_to 'Show', gallery %></td>
+    <td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
+    <td><%= link_to 'Destroy', gallery, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Gallery', new_gallery_path %>
+<%= link_to 'Go To Index', users_path %>

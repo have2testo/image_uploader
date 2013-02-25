@@ -2,8 +2,10 @@
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Photo</th>
+    <th>ObjectId</th>
+    <th>Name</th>
+    <th>Password</th>
+    <th>Email</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,8 +13,11 @@
 
 <% @users.each do |user| %>
   <tr>
-    <td><%= user.title %></td>
-    <td><%= image_tag(user.photo_url(:thumb).to_s) if user.photo? %></td>
+    <td><%= user.id %></td>
+    <td><%= user.name %></td>
+    <td><%= user.password %></td>
+    <td><%= user.email %></td>
+    <td><%= link_to 'Galleries', galleries_path(:user_id => user.id) %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>

@@ -13,8 +13,16 @@
 */
 
 body {
- background-image: url("ricepaper.png");
  text-shadow: -1px 1px 0 rgba(255,255,255,1);
+background: #eeeeee; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  #eeeeee 0%, #cccccc 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#eeeeee), color-stop(100%,#cccccc)); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  #eeeeee 0%,#cccccc 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  #eeeeee 0%,#cccccc 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  #eeeeee 0%,#cccccc 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  #eeeeee 0%,#cccccc 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 }
 
 .line {
@@ -31,6 +39,7 @@ body {
  @include box-shadow(rgba(255,255,255, .3) -1px 0 0 inset );
  border-bottom: 1px solid rgba(0,0,0, .2);
  @include box-shadow(rgba(255,255,255, .3) 0 1px 0 );
+ 
 }
 
 
@@ -54,6 +63,40 @@ background: -o-linear-gradient(top,  #fcfff4 0%,#e9e9ce 100%); /* Opera 11.10+ *
 background: -ms-linear-gradient(top,  #fcfff4 0%,#e9e9ce 100%); /* IE10+ */
 background: linear-gradient(to bottom,  #fcfff4 0%,#e9e9ce 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#e9e9ce',GradientType=0 ); /* IE6-9 */
+
+}
+
+a {
+ color : #FF6600
+}
+
+.frame {
+ background-image: url("ricepaper.png");
+ -moz-border-radius: 10px;
+ -webkit-border-radius: 10px;
+ border-radius: 10px;
+ /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+ -moz-box-shadow: 0px 0px 2px #000000;
+ -webkit-box-shadow: 0px 0px 2px #000000;
+ box-shadow: 0px 0px 2px #000000;
+ /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+
+/*
+ margin-top:30px;
+ margin-left:30px;
+ margin-right:auto;
+ margin-bottom:auto;
+*/
+
+ width: 70%;
+ margin: 0 auto;
+
+ padding:20px;
+ padding-left:30px;
+
+ min-height:300px;
+ height:auto !important;
+ height:300px;
 
 }
 

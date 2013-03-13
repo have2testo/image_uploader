@@ -1,12 +1,12 @@
 development:
-  uri: mongodb://localhost:27017/uppic
+  uri: mongodb://mongo:mongo@dbh61.mongolab.com:27617/uppic
 
 test:
-  uri: mongodb://localhost:27017/uppic
+  uri: mongodb://mongo:mongo@dbh61.mongolab.com:27617/uppic
 
 # set these environment variables on your prod server
 production:
-  uri: mongodb://localhost:27017/uppic
+  uri: mongodb://mongo:mongo@dbh61.mongolab.com:27617/uppic
 
   # slaves:
   #   - host: slave1.local

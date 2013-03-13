@@ -1,23 +1,23 @@
-<h1>Listing galleries</h1>
+<h1>作品一覧</h1>
+
+<p class="line" />
 
 <table>
   <tr>
-    <th>userId</th>
-    <th>Title</th>
-    <th>Photo</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th class="box">userId</th>
+    <th class="box">Title</th>
+    <th class="box">Photo</th>
+    <th colspan="3" class="box"></th>
   </tr>
 
 <% @galleries.each do |gallery| %>
-  <tr>
-    <td><%= gallery.user_id %></td>
-    <td><%= gallery.title %></td>
-    <td><%= image_tag(gallery.photo_url(:thumb).to_s) if gallery.photo? %></td>
-    <td><%= link_to 'Show', gallery %></td>
-    <td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
-    <td><%= link_to 'Destroy', gallery, confirm: 'Are you sure?', method: :delete %></td>
+  <tr class="backColor">
+    <td class="box"><%= gallery.user_id %></td>
+    <td class="box"><%= gallery.title %></td>
+    <td class="box"><%= image_tag(gallery.photo_url(:thumb).to_s) if gallery.photo? %></td>
+    <td class="box"><%= link_to 'Show', gallery %></td>
+    <td class="box"><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
+    <td class="box"><%= link_to 'Destroy', gallery, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>

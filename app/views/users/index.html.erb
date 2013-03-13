@@ -1,26 +1,22 @@
-<h1>Listing users</h1>
+<h1>ユーザリスト</h1>
+
+<p class="line"></p>
 
 <table>
-  <tr>
-    <th>ObjectId</th>
-    <th>Name</th>
-    <th>Password</th>
-    <th>Email</th>
-    <th></th>
-    <th></th>
-    <th></th>
+  <tr class="titleColor">
+    <th class="box">Name</th>
+    <th class="box">Email</th>
+    <th colspan="4" class="box"></th>
   </tr>
 
 <% @users.each do |user| %>
-  <tr>
-    <td><%= user.id %></td>
-    <td><%= user.name %></td>
-    <td><%= user.password %></td>
-    <td><%= user.email %></td>
-    <td><%= link_to 'Galleries', galleries_path(:user_id => user.id) %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
+  <tr class="backColor">
+    <td class="box"><%= user.name %></td>
+    <td class="box"><%= user.email %></td>
+    <td class="box"><%= link_to 'Galleries', galleries_path(:user_id => user.id) %></td>
+    <td class="box"><%= link_to 'Show', user %></td>
+    <td class="box"><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td class="box"><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
